@@ -4,7 +4,7 @@ const error = document.getElementById('error');
 
 
 function  redireccion(){
-    location.href   = 'https://www.youtube.com/watch?v=zAL8i0FzxL8'     
+    location.href   = 'index.html'     
 }
 
 function funcionEnviar(){
