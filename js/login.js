@@ -14,7 +14,7 @@ function funcionEnviar(){
     if(nombre.value == '' || nombre.value == null){
         mensajeError.push('ingresa un nombre')
     }
-    else if(contrasena.value == '' || contrasena.value == null){
+    if(contrasena.value == '' || contrasena.value == null){
         mensajeError.push('ingresa una contraseña')
     }   else{
         redireccion();
