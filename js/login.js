@@ -1,14 +1,25 @@
-document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("autos").addEventListener("click", function() {
-        localStorage.setItem("catID", 101);
-        window.location = "products.html"
-    });
-    document.getElementById("juguetes").addEventListener("click", function() {
-        localStorage.setItem("catID", 102);
-        window.location = "products.html"
-    });
-    document.getElementById("muebles").addEventListener("click", function() {
-        localStorage.setItem("catID", 103);
-        window.location = "products.html"
-    });
-});
+var nombre = document.getElementById('nombre');
+var contrasena = document.getElementById('contrasena');
+var error = document.getElementById('error');
+
+
+function  redireccion(){
+    window.location.href   = 'login.html'     
+}
+
+function funcionEnviar(){
+
+    var mensajeError = [];
+
+    if(nombre.value == '' || nombre.value == null){
+        alert('ingresa un nombre')
+    }
+    if(contrasena.value == '' || contrasena.value == null){
+        alert('ingresa una contraseña')
+    }   else{
+        redireccion();
+    }
+    
+
+    return false;
+}
