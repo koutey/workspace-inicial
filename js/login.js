@@ -12,10 +12,10 @@ function funcionEnviar(){
     var mensajeError = [];
 
     if(nombre.value == '' || nombre.value == null){
-        alert('ingresa un nombre')
+        alert('faltan datos')
     }
-    if(contrasena.value == '' || contrasena.value == null){
-        alert('ingresa una contraseña')
+    else if(contrasena.value == '' || contrasena.value == null){
+        alert('faltan datos')
     }   else{
         redireccion();
     }
