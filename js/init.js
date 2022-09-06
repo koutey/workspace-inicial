@@ -6,6 +6,7 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/prod
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
+var nombre = document.getElementById('nombre');
 
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -39,3 +40,6 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+var mostrar = localStorage.getItem("nombre");
+document.getElementById("bet").innerHTML = mostrar;
