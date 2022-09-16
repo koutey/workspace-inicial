@@ -14,8 +14,8 @@ function sortProducts(criteria, array){
     if (criteria === ORDER_ASC_BY_SOLD)
     {
         result = array.sort(function(a, b) {
-            let aCost = parseInt(a.soldCount);
-            let bCost = parseInt(b.soldCount);
+            let aCost = a.soldCount;
+            let bCost = b.soldCount;
 
             if ( a.soldCount < b.soldCount ){ return -1; }
             if ( a.soldCount > b.soldCount ){ return 1; }
@@ -23,8 +23,8 @@ function sortProducts(criteria, array){
         });
     }else if (criteria === ORDER_DESC_BY_SOLD){
         result = array.sort(function(a, b) {
-            let aCost = parseInt(a.soldCount);
-            let bCost = parseInt(b.soldCount);
+            let aCost = a.soldCount;
+            let bCost = b.soldCount;
 
             if ( a.soldCount > b.soldCount ){ return -1; }
             if ( a.soldCount < b.soldCount ){ return 1; }
@@ -44,6 +44,11 @@ function sortProducts(criteria, array){
     return result;
 }
 
+function setID(id) {
+    localStorage.setItem("prodID", id);
+    window.location.href = "product-info.html"
+}
+
 function showProductsList(){
 
     let htmlContentToAppend = "";
@@ -54,7 +59,7 @@ function showProductsList(){
             ((max == undefined) || (max != undefined && parseInt(product.cost) <= max))){
 
             htmlContentToAppend += `
-            <div onclick="setCatID(${product.id})" class="list-group-item list-group-item-action cursor-active">
+            <div onclick="setID(${product.id})" class="list-group-item list-group-item-action cursor-active">
                 <div class="row">
                     <div class="col-3">
                         <img src="${product.image}" alt="${product.description}" class="img-thumbnail">
@@ -140,3 +145,10 @@ document.getElementById("rangeFilterCount").addEventListener("click", function()
 
     showProductsList();
 });
+
+/* //Creo una función para redireccionarme a la página de products-info y ver el producto
+function mostrar(params) {
+    console.log(params);
+    window.location.href   = 'product-info.html'; 
+    debugger
+} */

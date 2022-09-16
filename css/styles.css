@@ -188,3 +188,20 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.but{
+  
+}
+
+.nombre, .contrasena{
+  border-radius: 3px;
+}
+
+.prodImg{
+  display:flex;
+  height: 11rem;
+}
+
+.title{
+  text-align:center;
+}
