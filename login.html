@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
+            <a class="nav-link active" href="login.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
@@ -30,7 +30,15 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <p class="nav-link" id="bet"></p>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="bet" data-bs-toggle="dropdown" aria-expanded="false">
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="bet">
+                <li><a class="item1" href="cart.html">Mi carrito</a></li>
+                <li><a class="item1" href="my-profile.html">Mi perfil</a></li>
+                <li><a class="item1" href="index.html">Cerrar sesión</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
           </li>
@@ -75,7 +83,7 @@
           </div>
         </div>
         <div class="row">
-          <a class="btn btn-light btn-lg btn-block" href="categories.html">Y mucho más!</a>
+          <a class="btn btn-light btn-lg btn-block more" href="categories.html">Y mucho más!</a>
         </div>
       </div>
     </div>

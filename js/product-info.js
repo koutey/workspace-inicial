@@ -1,6 +1,9 @@
 let productID = localStorage.getItem("prodID");
 const productInfo = `https://japceibal.github.io/emercado-api/products/${productID}.json`
 const commentsInfo = `https://japceibal.github.io/emercado-api/products_comments/${productID}.json`
+const relatedProds = productInfo.relatedProducts;
+let relatedArray = [];
+
 
 function showInfoProds(product) {
     let prodImg = "";
@@ -28,6 +31,8 @@ function showInfoProds(product) {
                 </div>
     `
     document.getElementById("mostrar").innerHTML = mostrar;
+    console.log(product);
+    console.log(relatedArray);
 }
 
 function showComments(comment) {
@@ -36,14 +41,58 @@ function showComments(comment) {
     for (let comments of comment) {
         comm += `
                 <br>
-                <div class"comment-box">
-                <h4> ${comments.user} -  ${comments.dateTime} - ${comments.score}</h4> 
-                <hr>
-                <p> ${comments.description} </p> 
+    <div class="row">
+        <div class="col">
+            <div class="d-flex w-100 justify-content-between comments ">
+                <div class="mb-1">
+                    <div class"comment-box">
+                <h4><small> ${comments.user} -  ${comments.dateTime} - `
+        for (let index = 1; index <= 5; index++) {
+            if (index <= comments.score) {
+                comm += `<span class="fa fa-snowflake-o checked"></span>`;
+            } else {
+                comm += `<span class="fa fa-snowflake-o"></span>`;
+            }
+        }
+        comm += `</h4>
+                    <hr>
+                <p> ${comments.description} </small></p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
 `}
     document.getElementById("comentarios").innerHTML = comm;
 }
+
+function showRelated() {
+    let prodRel = [];
+    for (let index = 0; index < relatedArray.length; index++) {
+        prodRel +=
+            `
+                <div class="rel"><div class="tarjeta">
+                    <span style="display: none; margin: auto;">${relatedArray[index].id}</span>
+                    <p style="text-align: center;">${relatedArray[index].name}</p>
+                <div class="prodImg"><img src="${relatedArray[index].image}">
+                </div>
+                </div>
+    `
+        document.getElementById("prodRel").innerHTML = prodRel;
+    }
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    getJSONData(productInfo).then(function (resultObj) {
+        if (resultObj.status === "ok") {
+            relatedArray = resultObj.data.relatedProducts
+                ;
+            showRelated(resultObj.data);
+        }
+    });
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
     getJSONData(commentsInfo).then(function (resultObj) {
