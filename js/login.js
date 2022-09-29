@@ -16,8 +16,10 @@ function  redireccion(){
 
 let nicolas = new Usuario("nicolas", "contrasena"); 
 
-Esta función crea un objeto que es un Usuario, la cual aplicare cuando vea como arreglar*/
+Esta función crea un objeto que es un Usuario*/
 
+
+//funcion para rediccionar desde el login al inicio tras verificar si los campos están vacios.
 function funcionEnviar(){
 
     if(nombre.value == '' || nombre.value == null){

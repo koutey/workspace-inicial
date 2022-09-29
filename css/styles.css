@@ -226,16 +226,20 @@ a.custom-card:hover {
   width: 40%;
   align-items: center;
   height: 30px;
-  background-color: rgb(167, 227, 255);
-  color: rgb(116, 100, 100);
+  background-color: rgb(233, 232, 232);
+  color: rgb(56, 50, 50);
   font-weight: bold;
   transition: .1s ease all;
   border-color: rgb(97, 97, 97);
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .but:hover{
-  color: rgb(41, 64, 78);
+  color: rgb(121, 138, 61);
+}
+
+.but:active{
+  color: blueviolet;
 }
 
 .prodImg{
@@ -257,7 +261,7 @@ a.custom-card:hover {
 
 .btn{
   margin-left: 7%;
-  color: rgb(44, 44, 44);
+  color: rgb(95, 95, 95);
   background-color: rgb(209, 209, 209);
   border-color: grey;
 }
