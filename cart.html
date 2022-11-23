@@ -21,34 +21,98 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="login.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="bet" data-bs-toggle="dropdown" aria-expanded="false">
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="bet">
-                <li><a class="item1" href="cart.html">Mi carrito</a></li>
-                <li><a class="item1" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="item1" href="index.html">Cerrar sesión</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+            <a class="nav-link" href="sell.html">Vender</a>secondary dropdown-toggle" type="button" id="bet"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="bet">
+              <li><a class="item1" href="cart.html">Mi carrito</a></li>
+              <li><a class="item1" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="item1" href="index.html">Cerrar sesión</a></li>
+            </ul>
       </div>
+      </li>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="bet" data-bs-toggle="dropdown"
+            aria-expanded="false">
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="bet">
+            <li><a class="item1" href="cart.html">Mi carrito</a></li>
+            <li><a class="item1" href="my-profile.html">Mi perfil</a></li>
+            <li><a class="item1" href="index.html">Cerrar sesión</a></li>
+          </ul>
+        </div>
+      </li>
+      </ul>
+    </div>
     </div>
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="cart">
+        <h2 class="text-center">Carrito de compras</h2>
       </div>
+      <div class="container row">
+        <h4>Artículos a comprar</h4>
+        <div class="container row mt-5 mb-5" id="show">
+        </div>
+        <div class="container row">
+          <h4>Tipo de envio</h4>
+          <div class="container" id="tipoEnvio">
+          </div>
+          <h3>Dirección de envio</h3>
+          <form class="row g-3 needs-validation" style="padding-bottom: 3rem;" novalidate>
+            <div class="col-md-6">
+              <label for="validationCustom01" class="form-label">Calle</label>
+              <input type="text" class="form-control" id="calle" required>
+              <div class="invalid-feedback">
+                Por favor, denos una calle!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustom02" class="form-label">Número</label>
+              <input type="number" class="form-control" id="numero" required>
+              <div class="valid-feedback">
+                Hecho!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustomUsername" class="form-label">Esquina</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" id="esquina" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  No deje el campo vacío!
+                </div>
+              </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+          <h3>Costos</h3>
+          <div class="container" id="costos">
+          </div>
+          <div>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalTerminos"
+              id="terminos">Metodo de pago</button>
+            <div class="invalid-feedback invalidTerms">Debe seleccionar un metodo de pago.</div>
+            <hr>
+            <div>
+              <button type="button" class="btn btn-primary btn-lg btn-block btnf" id="finCompra">Finalizar Compra</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+    </div>
+    </div>
     </div>
   </main>
   <footer class="text-muted">
@@ -67,6 +131,47 @@
       <div></div>
       <div></div>
       <div></div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalTerminos" tabindex="-1" aria-hidden="true" novalidate>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Términos y condiciones del servicio.</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body row">
+          <div>
+            <input type="radio" class="form-check-input" id="creditCard">
+            <label class="form-check-label" for="flexRadioDefault2">Tarjeta de crédito</label>
+          </div>
+          <hr>
+          <div class="col-md-6">
+            <label for="exampleFormControlInput1" class="form-label">Número de Tarjeta</label>
+            <input type="number" class="form-control" id="tarjeta" required>
+          </div>
+          <div class="col-md-5">
+            <label for="exampleFormControlInput1" class="form-label">Códig de seg.</label>
+            <input type="number" class="form-control" id="codig" required>
+          </div>
+          <div class="col-md-6">
+            <label for="exampleFormControlInput1" class="form-label">Vencimiento (MM/AA)</label>
+            <input type="date" class="form-control" id="vencimiento" required>
+          </div>
+          <div>
+            <input type="radio" class="form-check-input" id="transf">
+            <label class="form-check-label" for="flexRadioDefault2">Transferencia bancaria</label>
+          </div>
+          <hr>
+          <div class="col-md-6">
+            <label for="exampleFormControlInput1" class="form-label">Número de cuenta</label>
+            <input type="number" class="form-control" id="cuenta" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
     </div>
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>

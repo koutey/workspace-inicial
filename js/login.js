@@ -1,23 +1,13 @@
 var nombre = document.getElementById('nombre');
-var contrasena = document.getElementById('contrasena');
-
+var contrasena = document.getElementById('contrasena')
 
 function  redireccion(){
     window.location.href   = 'login.html';  
 }
 
-/* class Usuario{
-    constructor(nombre, contrasena){
-        this.nombre = nombre;
-        this.contrasena = contrasena;
-        this.isLogged = false;
-    }
+function redirect(){
+    window.location.href   = 'index.html';
 }
-
-let nicolas = new Usuario("nicolas", "contrasena"); 
-
-Esta función crea un objeto que es un Usuario*/
-
 
 //funcion para rediccionar desde el login al inicio tras verificar si los campos están vacios.
 function funcionEnviar(){
@@ -36,3 +26,12 @@ function funcionEnviar(){
     return false;
 }
 
+function cerrarSesion(){
+    localStorage.removeItem("nombre");
+}
+
+/* document.getElementById("cerrar").addEventListener('submit', function(){
+    cerrarSesion(); 
+    redirect();
+})
+ */

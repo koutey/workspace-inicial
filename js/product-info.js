@@ -4,7 +4,6 @@ const commentsInfo = `https://japceibal.github.io/emercado-api/products_comments
 const relatedProds = productInfo.relatedProducts;
 let relatedArray = [];
 
-
 function showInfoProds(product) {
     let prodImg = "";
 
@@ -72,9 +71,10 @@ function showRelated() {
         prodRel +=
             `
                 <div class="rel"><div class="tarjeta">
-                <span style="display: none; margin: auto;">${relatedArray[index].id}</span>
+                <div style=" margin: auto;" onclick="redirect(${relatedArray[index].id})">
                 <p style="text-align: center;">${relatedArray[index].name}</p>
-                <div class="prodImg"><img src="${relatedArray[index].image}">
+                <div class="prodImg cursor-active"><img src="${relatedArray[index].image}">
+                </div>
                 </div>
                 </div>
     `
@@ -82,6 +82,10 @@ function showRelated() {
     }
 }
 
+function redirect(id) {
+    localStorage.setItem("prodID", id);
+    window.location = "product-info.html";
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     getJSONData(productInfo).then(function (resultObj) {
@@ -91,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
     getJSONData(commentsInfo).then(function (resultObj) {
