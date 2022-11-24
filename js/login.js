@@ -5,9 +5,6 @@ function  redireccion(){
     window.location.href   = 'login.html';  
 }
 
-function redirect(){
-    window.location.href   = 'index.html';
-}
 
 //funcion para rediccionar desde el login al inicio tras verificar si los campos están vacios.
 function funcionEnviar(){
@@ -24,10 +21,6 @@ function funcionEnviar(){
     localStorage.setItem("nombre", nombre.value);
 
     return false;
-}
-
-function cerrarSesion(){
-    localStorage.removeItem("nombre");
 }
 
 /* document.getElementById("cerrar").addEventListener('submit', function(){

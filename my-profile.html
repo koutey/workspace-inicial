@@ -52,7 +52,7 @@
               <ul class="dropdown-menu" aria-labelledby="bet">
                 <li><a class="item1" href="cart.html">Mi carrito</a></li>
                 <li><a class="item1" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="item1" href="index.html">Cerrar sesión</a></li>
+                <li><a class="item1" type="submit" onclick="cerrarSesion()">Cerrar sesión</a></li>
               </ul>
             </div>
           </li>
@@ -62,6 +62,39 @@
   </nav>
   <main>
     <div class="container" id="profile">
+      <div class="form-perfil col-6" id="formus">
+        <h2>Perfil</h2>
+        <hr>
+        <div class="perfil">
+        <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input class="form-control mb-2" type="text" id="name" required></input>
+        </div>
+        <div class="campo">
+        <label for="segundonombre">Segundo nombre</label>
+        <input class="form-control mb-2" type="text" id="secondname"></input>
+        </div>
+        <div class="campo">
+        <label for="apellido">Apellido</label>
+        <input class="form-control mb-2" type="text" id="lastname" required></input>
+        </div>
+        <div class="campo">
+        <label for="segundoapellido">Segundo Apellido</label>
+        <input class="form-control mb-2" type="text" id="secondlastname"></input>
+        </div>
+        <div class="campo">
+        <label for="nombre">E-mail</label>
+        <input class="form-control mb-2" type="email" id="user" disabled>
+        </div>
+        <div class="campo">
+        <label for="teléfono">Telefono</label>
+        <input class="form-control mb-2" type="number" id="cellphone" required></input>
+        </div>
+        <div class="col-12">
+        <button class="btn  btn-primary btn-block" type="submit" onclick="guardarDatos()">Guardar Cambios</button>
+        </div>
+        </div>
+        </div>
     </div>
   </main>
   <footer class="text-muted">

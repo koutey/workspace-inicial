@@ -41,5 +41,15 @@ let getJSONData = function(url){
     });
 }
 
+function redirect(){
+  window.location.href   = 'index.html';
+}
+
 var mostrar = localStorage.getItem("nombre");
 document.getElementById("bet").innerHTML = mostrar;
+
+function cerrarSesion(){
+  localStorage.removeItem("nombre");
+  localStorage.removeItem("formulario");
+  redirect();
+}
